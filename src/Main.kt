@@ -17,4 +17,16 @@ fun registrarGasto(
      //Mostrar categorías disponibles (arreglo con la categorías)
     // Seguir haciendo pseudocodigo
 
+
+
+}
+
+fun mostrarGastos(
+    conceptos: List<String>,
+    categorias: List<String>,
+    montos: List<Double>
+)
+{
+    //Declarar un pseudocódigo
+
 }
