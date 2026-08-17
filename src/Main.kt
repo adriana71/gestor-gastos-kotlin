@@ -8,13 +8,13 @@ fun main() {
     val montos = mutableListOf<Double>()
 
     registrarGasto(conceptos, categorias, montos)
+    mostrarGastos(conceptos, categorias, montos)
 
 }
 
 
 
 // Commit 1 Agrega función para registrar gastos //
-
 fun registrarGasto(
     conceptos: MutableList<String>,
     categorias: MutableList<String>,
@@ -71,4 +71,26 @@ fun registrarGasto(
 }
 
 ////commit 2 Agrega listado de gastos registrados //
+fun mostrarGastos(
+    conceptos: List<String>,
+    categorias: List<String>,
+    montos: List<Double>
+) {
+    println("\nGASTOS REGISTRADOS\n")
 
+    if (conceptos.isEmpty()) {
+        println("No hay gastos registrados en este momento.")
+        return
+    }
+
+    // Recorrer las listas paralelas
+
+    for (i in conceptos.indices) {
+        val indice = "${i + 1}."
+        val conceptoFormateado = conceptos[i].padEnd(15)
+        val categoriaFormateada = categorias[i].padEnd(20)
+        val montoFormateado = "$%.2f".format(montos[i])
+
+        println("$indice $conceptoFormateado | $categoriaFormateada | $montoFormateado")
+    }
+}
